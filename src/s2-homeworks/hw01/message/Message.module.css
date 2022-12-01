@@ -1,16 +1,27 @@
 .message {
+    /*justify-content: flex-end;*/
+    display: flex;
+    flex-direction: column;
 
 }
 
 .imageAndText {
-
+    display: flex;
 }
 
 .imageAndText img {
-
+    height: 70px;
 }
 
 .text {
+    background-color: #f1e3d0;
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    border-radius: 1.125rem 1.125rem 1.125rem 0;
+    min-height: 2.25rem;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
 
 }
 

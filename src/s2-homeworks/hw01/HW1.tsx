@@ -27,7 +27,6 @@ export type UserType = {
 }
 
 export type MessageInnerType = {
-    id?:number
     text: string
     time: string
 }
