@@ -32,6 +32,7 @@ function Affair(props: AffairPropsType) {
             <div id={'hw2-priority-' + props.affair._id} hidden>
                 {/*создаёт студент*/}
                 {/**/}
+                {props.affair.priority}
             </div>
 
             <button onClick={deleteCallback}
