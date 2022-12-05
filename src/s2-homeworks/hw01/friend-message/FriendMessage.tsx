@@ -1,8 +1,5 @@
 import React from 'react'
 import s from './FriendMessage.module.css'
-import {MessageType} from "../HW1";
-import {UserType} from "../HW1";
-import {MessageInnerType} from "../HW1";
 import {MessagePropsType} from "../message/Message";
 
 
