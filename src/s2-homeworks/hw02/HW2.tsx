@@ -40,12 +40,12 @@ const defaultAffairs: AffairType[] = [ // need to fix any
 
 // pure helper functions
 export const filterAffairs = (affairs: AffairType[], filter: FilterType): AffairType[] => { // need to fix any
-    // return  filter==='all' ? affairs : affairs.filter(af=>af.priority===filter)  // need to fix
-    if (filter === 'all') return affairs
-    if (filter === 'low') return affairs.filter(af=>af.priority==='low')
-    if (filter === 'middle') return affairs.filter(af=>af.priority==='middle')
-    if (filter === 'high') return affairs.filter(af=>af.priority==='high')
-    else return affairs
+    return  filter==='all' ? affairs : affairs.filter(af=>af.priority===filter)  // need to fix
+    // if (filter === 'all') return affairs
+    // if (filter === 'low') return affairs.filter(af=>af.priority==='low')
+    // if (filter === 'middle') return affairs.filter(af=>af.priority==='middle')
+    // if (filter === 'high') return affairs.filter(af=>af.priority==='high')
+    // else return affairs
 
 }
 export const deleteAffair = (affairs: AffairType[], _id: number): AffairType[] => { // need to fix any
@@ -58,7 +58,6 @@ function HW2() {
 
     const filteredAffairs = filterAffairs(affairs, filter)
     const deleteAffairCallback = (_id: number) => {
-        debugger
         setAffairs(deleteAffair(affairs, _id))
     }
 
