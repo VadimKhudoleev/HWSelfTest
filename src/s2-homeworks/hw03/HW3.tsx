@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { v1 } from 'uuid'
+import React, {useState} from 'react'
+import {v1} from 'uuid'
 import s2 from '../../s1-main/App.module.css'
 import GreetingContainer from './GreetingContainer'
 
 /*
-* 1 - описать тип UserType
-* 2 - указать нужный тип в useState с users
+* 1 - описать тип UserType#
+* 2 - указать нужный тип в useState с users#
 * 3 - дописать типы и логику функции pureAddUserCallback и проверить её тестами
 * 4 - в файле GreetingContainer.tsx дописать типизацию пропсов
 * 5 - в файле GreetingContainer.tsx указать нужные типы в useState с name и error
@@ -19,20 +19,23 @@ import GreetingContainer from './GreetingContainer'
 
 // types
 export type UserType = {
-    _id: any // need to fix any
-    name: any // need to fix any
+    _id: string // need to fix any
+    name: string // need to fix any
 }
 
-export const pureAddUserCallback = (name: any, setUsers: any, users: any) => { // need to fix any
-    const user = { // need to fix
+export const pureAddUserCallback = (name: string, setUsers: Function, users: UserType[]) => { // need to fix any
+    const user = {
+        _id: v1(),
+        name
     }
+    console.log(user)
     setUsers([...users, user])
 }
 
 const HW3 = () => {
-    const [users, setUsers] = useState<any>([]) // need to fix any
+    const [users, setUsers] = useState<UserType[]>([]) // need to fix any
 
-    const addUserCallback = (name: any) => { // need to fix any
+    const addUserCallback = (name: string) => { // need to fix any
         pureAddUserCallback(name, setUsers, users)
     }
 
