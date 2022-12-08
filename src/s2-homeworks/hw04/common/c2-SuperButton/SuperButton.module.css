@@ -1,19 +1,25 @@
 .button {
-    background-color: #cc0000;
+    background-color: #b28a8a;
 }
 
 .disabled {
+    width: 100px;
 }
 
 .secondary {
+    width: 200px;
+
+    /*background-color: #cc0000;*/
+
 }
 
 .default {
+    background-color: #b28a8a;
 
 }
 
 .red {
-
+    background-color: #cc0000;
 }
 
 .default:hover {
