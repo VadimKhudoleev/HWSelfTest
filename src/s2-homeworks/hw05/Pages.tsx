@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route, Navigate } from 'react-router-dom'
+import {Routes, Route, Navigate, NavLink} from 'react-router-dom'
 import Error404 from './pages/Error404'
 import PreJunior from './pages/PreJunior'
 import Junior from './pages/Junior'
@@ -9,6 +9,7 @@ export const PATH = {
     PRE_JUNIOR: '/pre-junior',
     JUNIOR: '/junior',
     JUNIOR_PLUS: '/junior-plus',
+    404:'hw5-page-404'
 }
 
 function Pages() {
@@ -24,7 +25,7 @@ function Pages() {
                 <Route path='/pre-junior' element={<PreJunior/>}/>
                 <Route path='/junior' element={<Junior/>}/>
                 <Route path='/junior-plus' element={<JuniorPlus/>}/>
-                <Route path='/*' element={<Error404/>}/>
+                <Route path='/*' element={<NavLink id={'hw5-page-404'} to={PATH["404"]}/>}/>
                 {/*<Route ...*/}
                 {/*<Route ...*/}
                 {/*<Route ...*/}
