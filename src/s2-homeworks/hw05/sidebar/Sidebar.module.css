@@ -1,24 +1,48 @@
 .sidebar {
+
+    position: absolute;
+    height: 100vh;
+    width: 20vh;
+    background-color: #FFFFFF;
+    transform: translate(-420px);
+    transition-duration: 500ms;
 }
 
 .sidebar.open {
+    position: absolute;
+    height: 100vh;
+    width: 40vh;
+    background-color: #FFFFFF;
+    transform: translate(0);
+
 }
 
 .background {
 }
 
 .nav {
+    display: flex;
+    flex-direction: column;
 }
 
 .nav a {
+    font-size: xx-large;
+    margin-top: 20px;
+    margin-left: 40px;
 }
+
 
 .nav a:hover {
 }
 
 .nav a.active {
+    text-decoration: none;
+    color: #5f92c5;
 }
 .close {
+    background-color: transparent;
+
+    margin-left: 350px;
 }
 
 .close img {
