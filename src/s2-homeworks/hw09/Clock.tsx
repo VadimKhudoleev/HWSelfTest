@@ -8,15 +8,16 @@ function Clock() {
     // for autotests // не менять // можно подсунуть в локалСторэдж нужную дату, чтоб увидеть как она отображается
     const [date, setDate] = useState<Date>(new Date(restoreState('hw9-date', Date.now())))
     const [show, setShow] = useState<boolean>(false)
-    const [able, setAble] = useState<boolean>(true)
+    // const [able, setAble] = useState<boolean>(true)
 
     const start = () => {
+        debugger
 
         let setIntervalId = setInterval(() => {
             setDate(new Date(restoreState('hw9-date', Date.now())))
             },500)
         setTimerId(+setIntervalId)
-        setAble(true)
+        // setAble(true)
         // пишут студенты // запустить часы (должно отображаться реальное время, а не +1)
         // сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
 
@@ -25,9 +26,11 @@ function Clock() {
     const stop = () => {
         debugger
         clearInterval(timerId)
-        console.log(timerId)
-        console.log(clearInterval(timerId))
-        setAble(false)
+        setTimerId(undefined)
+
+
+        // setAble(false)
+
 
 
         // пишут студенты // поставить часы на паузу, обнулить ид таймера (timerId <- undefined)
@@ -85,15 +88,15 @@ function Clock() {
             <div className={s.buttonsContainer}>
                 <SuperButton
                     id={'hw9-button-start'}
-                    disabled={able} // пишут студенты // задизэйблить если таймер запущен
+                     disabled={!!timerId} // пишут студенты // задизэйблить если таймер запущен
                     onClick={start}
                 >
                     start
                 </SuperButton>
                 <SuperButton
                     id={'hw9-bfn-stop'}
-                    disabled={!able}
-                    // disabled={} // пишут студенты // задизэйблить если таймер не запущен
+                    // disabled={!able}
+                    disabled={!timerId} // пишут студенты // задизэйблить если таймер не запущен
                     onClick={stop}
                 >
                     stop
