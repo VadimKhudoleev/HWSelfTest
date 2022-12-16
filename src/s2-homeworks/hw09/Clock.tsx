@@ -11,6 +11,7 @@ function Clock() {
     // const [able, setAble] = useState<boolean>(true)
 
     const start = () => {
+        clearInterval(timerId)
 
 
 
