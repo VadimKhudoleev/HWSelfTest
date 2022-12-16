@@ -11,9 +11,10 @@ function Clock() {
     // const [able, setAble] = useState<boolean>(true)
 
     const start = () => {
-        debugger
 
-        let setIntervalId = setInterval(() => {
+
+
+        const setIntervalId = setInterval(() => {
             setDate(new Date(restoreState('hw9-date', Date.now())))
             },500)
         setTimerId(+setIntervalId)
@@ -24,7 +25,7 @@ function Clock() {
     }
 
     const stop = () => {
-        debugger
+
         clearInterval(timerId)
         setTimerId(undefined)
 
@@ -88,15 +89,14 @@ function Clock() {
             <div className={s.buttonsContainer}>
                 <SuperButton
                     id={'hw9-button-start'}
-                     disabled={!!timerId} // пишут студенты // задизэйблить если таймер запущен
+                     // disabled={!!timerId} // пишут студенты // задизэйблить если таймер запущен
                     onClick={start}
                 >
                     start
                 </SuperButton>
                 <SuperButton
                     id={'hw9-bfn-stop'}
-                    // disabled={!able}
-                    disabled={!timerId} // пишут студенты // задизэйблить если таймер не запущен
+                    // disabled={!timerId} // пишут студенты // задизэйблить если таймер не запущен
                     onClick={stop}
                 >
                     stop
