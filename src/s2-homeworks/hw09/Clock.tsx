@@ -11,7 +11,7 @@ function Clock() {
     // const [able, setAble] = useState<boolean>(true)
 
     const start = () => {
-        clearInterval(timerId)
+        // clearInterval(timerId)
 
 
 
@@ -27,7 +27,7 @@ function Clock() {
 
     const stop = () => {
 
-        clearInterval(timerId)
+        // clearInterval(timerId)
         setTimerId(undefined)
 
 
@@ -90,14 +90,14 @@ function Clock() {
             <div className={s.buttonsContainer}>
                 <SuperButton
                     id={'hw9-button-start'}
-                     // disabled={!!timerId} // пишут студенты // задизэйблить если таймер запущен
+                     disabled={!!timerId} // пишут студенты // задизэйблить если таймер запущен
                     onClick={start}
                 >
                     start
                 </SuperButton>
                 <SuperButton
                     id={'hw9-bfn-stop'}
-                    // disabled={!timerId} // пишут студенты // задизэйблить если таймер не запущен
+                    disabled={!timerId} // пишут студенты // задизэйблить если таймер не запущен
                     onClick={stop}
                 >
                     stop
