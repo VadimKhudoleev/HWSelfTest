@@ -16,7 +16,8 @@ function Clock() {
 
 
         const setIntervalId = setInterval(() => {
-            setDate(new Date(restoreState('hw9-date', Date.now())))
+            setDate(new Date())
+            // setDate(new Date(restoreState('hw9-date', Date.now())))
             },500)
         setTimerId(+setIntervalId)
         // setAble(true)
@@ -27,7 +28,7 @@ function Clock() {
 
     const stop = () => {
 
-        // clearInterval(timerId)
+        clearInterval(timerId)
         setTimerId(undefined)
 
 
