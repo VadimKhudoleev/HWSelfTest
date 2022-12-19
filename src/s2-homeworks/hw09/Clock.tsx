@@ -15,11 +15,11 @@ function Clock() {
 
 
 
-        const setIntervalId = setInterval(() => {
+        const setIntervalId = +setInterval(() => {
             setDate(new Date())
             // setDate(new Date(restoreState('hw9-date', Date.now())))
-            },500)
-        setTimerId(+setIntervalId)
+            },1000)
+        setTimerId(setIntervalId)
         // setAble(true)
         // пишут студенты // запустить часы (должно отображаться реальное время, а не +1)
         // сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
