@@ -8,9 +8,10 @@ function Clock() {
     // for autotests // не менять // можно подсунуть в локалСторэдж нужную дату, чтоб увидеть как она отображается
     const [date, setDate] = useState<Date>(new Date(restoreState('hw9-date', Date.now())))
     const [show, setShow] = useState<boolean>(false)
-    // const [able, setAble] = useState<boolean>(true)
+    const [able, setAble] = useState<boolean>(false)
 
     const start = () => {
+        setAble(true)
         // clearInterval(timerId)
 
 
@@ -27,7 +28,7 @@ function Clock() {
     }
 
     const stop = () => {
-
+        setAble(false)
         clearInterval(timerId)
         setTimerId(undefined)
 
@@ -91,14 +92,14 @@ function Clock() {
             <div className={s.buttonsContainer}>
                 <SuperButton
                     id={'hw9-button-start'}
-                     disabled={!!timerId} // пишут студенты // задизэйблить если таймер запущен
+                     disabled={able} // пишут студенты // задизэйблить если таймер запущен
                     onClick={start}
                 >
                     start
                 </SuperButton>
                 <SuperButton
                     id={'hw9-bfn-stop'}
-                    disabled={!timerId} // пишут студенты // задизэйблить если таймер не запущен
+                    disabled={!able} // пишут студенты // задизэйблить если таймер не запущен
                     onClick={stop}
                 >
                     stop
