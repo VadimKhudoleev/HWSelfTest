@@ -1,5 +1,5 @@
 const initState = {
-    loading: false,
+    isLoading: false,
 }
 
 export const loadingReducer = (state = initState, action: LoadingActionType): typeof initState => { // fix any
@@ -8,7 +8,7 @@ export const loadingReducer = (state = initState, action: LoadingActionType): ty
 
             return {
                 ...state,
-                loading: action.isLoading
+                isLoading: action.isLoading
             }
         // пишет студент  // need to fix
 

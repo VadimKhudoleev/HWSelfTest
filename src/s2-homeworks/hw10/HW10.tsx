@@ -18,7 +18,7 @@ export type LoadingType = {
 }
 
 const HW10 = () => {
-    const isLoading = useSelector<AppStoreType, LoadingType>(state => state.loading)
+    const isLoading = useSelector<AppStoreType, boolean>(state => state.loading.isLoading)
     const dispatch = useDispatch()
 
     const setLoading = () => {
@@ -34,7 +34,7 @@ const HW10 = () => {
         <div id={'hw10'}>
             <div className={s2.hwTitle}>Homework #10</div>
             <div className={s2.hw}>
-                {isLoading.loading ? (
+                {isLoading ? (
                     <div id={'hw10-loading'}>
                         <Loader/>
                     </div>
