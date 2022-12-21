@@ -13,23 +13,28 @@ import {Loader} from './Loader'
 * 4 - сделать стили в соответствии с дизайном
 * */
 
-const HW10 = () => {
-    const dispatch = useDispatch()
-    // useSelector, useDispatch // пишет студент
-    const isLoading = false
+export type LoadingType = {
+    loading: boolean
+}
 
-    const setLoading = () => { // пишет студент // показать крутилку на 1,5 секунд
+const HW10 = () => {
+    const isLoading = useSelector<AppStoreType, LoadingType>(state => state.loading)
+    const dispatch = useDispatch()
+
+    const setLoading = () => {
+
         dispatch(loadingAC(true))
 
-        // setTimeout
-    }
+        setTimeout(()=>{
+            dispatch(loadingAC(false))},3000
+        )
 
+    }
     return (
         <div id={'hw10'}>
             <div className={s2.hwTitle}>Homework #10</div>
-
             <div className={s2.hw}>
-                {isLoading ? (
+                {isLoading.loading ? (
                     <div id={'hw10-loading'}>
                         <Loader/>
                     </div>
