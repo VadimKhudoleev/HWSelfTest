@@ -52,7 +52,7 @@ const HW13 = () => {
                     console.log(e)
                     setCode('Ошибка 500')
                     setImage(error500)
-                    setInfo('эмитация ошибки на сервере\n' +
+                    setInfo(
                         'ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)')
                     setDisable(false)
                     setText('эмитация ошибки на сервере')
@@ -62,7 +62,7 @@ const HW13 = () => {
                     console.log(e)
                     setCode('Ошибка 400')
                     setImage(error400)
-                    setInfo('Ты не отправил success в body вообще!\n' +
+                    setInfo(
                         'ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!')
                     setDisable(false)
                     setText('Ты не отправил success в body вообще!')
