@@ -44,14 +44,7 @@ const HW13 = () => {
                 // дописать
 
             })
-            // .catch((e) => {
-            //     e.response.status === 400 &&
-            //     console.log(e)
-            //     setCode('Ошибка 400')
-            //     setImage(error400)
-            //     setInfo('')
-            //     setDisable(false)
-            // })
+
             .catch((e) => {
                 if(e.response.status === 500) {
                     console.log(e)
