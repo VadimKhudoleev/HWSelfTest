@@ -39,34 +39,25 @@ const HW13 = () => {
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
-                setInfo('')
+                setInfo('...всё ок)\n' +
+                    'код 200 - обычно означает что скорее всего всё ок)')
                 setDisable(false)
-                // дописать
 
             })
-            // .catch((e) => {
-            //     e.response.status === 400 &&
-            //     console.log(e)
-            //     setCode('Ошибка 400')
-            //     setImage(error400)
-            //     setInfo('')
-            //     setDisable(false)
-            // })
+
             .catch((e) => {
                 if(e.response.status === 500) {
                     console.log(e)
                     setCode('Ошибка 500')
                     setImage(error500)
-                    setInfo('эмитация ошибки на сервере\n' +
-                        'ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)')
+                    setInfo('эмитация ошибки на сервере')
                     setDisable(false)
                 }
                 if(e.response.status === 400) {
                     console.log(e)
                     setCode('Ошибка 400')
                     setImage(error400)
-                    setInfo('Ты не отправил success в body вообще!\n' +
-                        'ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!')
+                    setInfo('Ты не отправил success в body вообще!')
                     setDisable(false)
                 }
                 if(e.response.status === 0) {
