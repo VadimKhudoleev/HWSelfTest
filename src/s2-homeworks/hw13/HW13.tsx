@@ -41,6 +41,8 @@ const HW13 = () => {
                 setImage(success200)
                 setInfo('')
                 setDisable(false)
+                setText('...всё ок)')
+
                 // дописать
 
             })
@@ -53,6 +55,8 @@ const HW13 = () => {
                     setInfo('эмитация ошибки на сервере\n' +
                         'ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)')
                     setDisable(false)
+                    setText('эмитация ошибки на сервере')
+
                 }
                 if(e.response.status === 400) {
                     console.log(e)
@@ -61,6 +65,8 @@ const HW13 = () => {
                     setInfo('Ты не отправил success в body вообще!\n' +
                         'ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!')
                     setDisable(false)
+                    setText('Ты не отправил success в body вообще!')
+
                 }
                 if(e.response.status === 0) {
                     console.log(e)
@@ -69,6 +75,7 @@ const HW13 = () => {
                     setInfo('Network Error\n' +
                         'AxiosError')
                     setDisable(false)
+
                 }
             })
 
